@@ -61,7 +61,7 @@ jobs:
         run: |
           flake8 .
 
-                - name: Bandit security scan
+      - name: Bandit security scan
         run: |
           bandit -r app
 
