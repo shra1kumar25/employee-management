@@ -5,8 +5,8 @@ from app.models import Base
 Base.metadata.create_all(bind=engine)
 
 
-
 app = FastAPI()
+
 
 @app.get("/")
 def home():
