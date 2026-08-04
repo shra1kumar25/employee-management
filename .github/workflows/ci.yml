@@ -61,6 +61,18 @@ jobs:
         run: |
           flake8 .
 
+                - name: Bandit security scan
+        run: |
+          bandit -r app
+
+
+      - name: Dependency vulnerability scan
+        run: |
+          pip-audit
+
+      - name: Gitleaks secret scan
+        uses: gitleaks/gitleaks-action@v2
+
       - name: Run tests
         env:
           DATABASE_URL: postgresql://postgres:admin123@localhost:5432/employee_db
