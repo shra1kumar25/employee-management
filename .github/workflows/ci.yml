@@ -47,7 +47,19 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      - name: Black formatting check
+        run: |
+          black --check .
 
+
+      - name: Ruff lint
+        run: |
+          ruff check .
+
+
+      - name: Flake8 lint
+        run: |
+          flake8 .
 
       - name: Run tests
         env:
